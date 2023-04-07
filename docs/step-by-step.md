@@ -56,3 +56,9 @@ touch index.js
 ## CSS with webpack
 - Create a style.css file in /assets/css
 
+## Event handling and state updates with React
+- create variable posts with initial data from initialPosts
+- create variable post to save textarea value
+- create handleSubmit
+  
+
