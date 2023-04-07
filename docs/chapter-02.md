@@ -16,3 +16,11 @@ mkdir src/server
 ```
 
 ## Setting up Express.js
+## Running Express.js in development
+- add a new script our package.json
+- install nodemon
+```sh
+npm install --save nodemon
+npm install --save-dev @babel/node
+npm run server
+```
