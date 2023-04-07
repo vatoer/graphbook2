@@ -68,4 +68,8 @@ sequelize seed:generate --name fake-posts --seeders-path src/server/seeders
 
 ```sh
 sequelize db:seed:all --seeders-path src/server/seeders --config src/server/config/index.js
-``
+```
+
+## Using Sequelize with GraphQL
+### Global database instance
+
