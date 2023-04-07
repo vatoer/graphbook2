@@ -21,3 +21,9 @@ npm install --save sequelize mysql2
 mkdir src/server/database
 touch src/server/database/index.js
 ```
+
+## Using a configuration file with Sequelize
+```sh
+mkdir src/server/config
+touch src/server/config/index.js
+```
