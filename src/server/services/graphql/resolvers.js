@@ -5,9 +5,14 @@ export default function resolver() {
     const { Post } = db.models;
 
     const resolvers = {
+        Post: {
+            user(post, args, context) {
+                return post.getUser();
+            },
+        },
         RootQuery: {
             posts(root, args, context) {
-                const posts = Post.findAll({order:[['createdAt','DESC']]});
+                const posts = Post.findAll({ order: [['createdAt', 'DESC']] });
                 return posts;
             },
         },

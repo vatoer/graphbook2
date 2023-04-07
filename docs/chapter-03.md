@@ -113,3 +113,5 @@ to undo all
 ```sh
 sequelize db:migrate:undo:all --to XXXXXXXXXXXXXX-create-posts.js --migrations-path src/server/migrations --config src/server/config/index.js
 ```
+
+## Model associations in Sequelize
