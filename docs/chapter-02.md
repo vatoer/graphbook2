@@ -59,3 +59,55 @@ mkdir src/server/services/graphql
 
 ## Using multiple types in GraphQL schemas
 ## test with fake data
+
+## Writing your first GraphQL mutation
+- add input type and mutation to schema
+
+### json format request 
+
+```json
+{
+  "operationName": null,
+  "query": "mutation addPost($post: PostInput!, $user: UserInput!) { addPost(post: $post, user: $user) { id text user { username avatar } }}",
+  "variables": {
+    "post": {
+      "text": "You just added a post."
+    },
+    "user": {
+      "avatar": "/uploads/avatar3.png",
+      "username": "Fake User"
+    }
+  }
+}
+```
+
+### graphql format
+
+#### query
+  
+```#graphql
+mutation addPost($post: PostInput!, $user: UserInput!) {
+  addPost(post: $post, user: $user) {
+    id
+    text
+    user {
+      username
+      avatar
+    }
+  }
+}
+```
+
+#### variable 
+  
+```#graphql
+{
+  "post": {
+    "text": "You just added a post."
+  },
+  "user": {
+    "avatar": "/uploads/avatar3.png",
+    "username": "Fake User"
+  }
+}
+```
