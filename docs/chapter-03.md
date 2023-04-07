@@ -59,3 +59,13 @@ npm install --save-dev babel-plugin-require-context-hook
 
 We need to load the Babel plugin at the start of our development server, so, open the
 package.json file and edit the server script
+
+## Seeding data with Sequelize
+```sh
+mkdir src/server/seeders
+sequelize seed:generate --name fake-posts --seeders-path src/server/seeders
+```
+
+```sh
+sequelize db:seed:all --seeders-path src/server/seeders --config src/server/config/index.js
+``
