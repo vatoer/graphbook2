@@ -150,6 +150,4 @@ sequelize db:migrate --migrations-path src/server/migrations --config src/server
 sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name Message --attributes text:string,userId:integer,chatId:integer
 ```
 
-
-
-
+## Chats and messages in GraphQL
