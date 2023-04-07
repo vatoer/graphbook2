@@ -49,5 +49,7 @@ touch index.js
   npm run client
   ```
 
-
+## Rendering arrays from React state
+- Define a new variable ```initialPosts``` above the default exported App function
+- import ```useState```
 
