@@ -27,4 +27,17 @@ npm run server
 
 ## Routing in Express.js
 ## Serving our production build
+## Using Express.js middleware
+
+## Installing important middleware
+```sh
+npm install --save compression cors helmet
+```
+
+- Express Helmet
+  
+    Helmet is a tool that allows you to set various HTTP headers to secure your application
+
+- Compression with Express.js
+- CORS in Express.js
 
