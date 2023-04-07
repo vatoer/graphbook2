@@ -40,3 +40,9 @@ npm install -g sequelize-cli
 
 sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name Post --attributes text:text
 ```
+
+## Your first database migration
+execute migration
+```sh
+sequelize db:migrate --migrations-path src/server/migrations --config src/server/config/index.js
+```
