@@ -54,3 +54,7 @@ mkdir src/server/services/graphql
 ## Writing your first GraphQL schemas
 ## Implementing GraphQL resolvers
 
+## Sending GraphQL queries
+- send POST request to ```http://127.0.0.1:8000/graphql```:
+
+

@@ -1,4 +1,7 @@
-const typeDefinitions = `
+
+import { ApolloServer } from '@apollo/server';
+
+const typeDefinitions = `#graphql
     type Post {
         id: Int
         text: String
@@ -12,3 +15,5 @@ const typeDefinitions = `
         query: RootQuery
     }
  `;
+
+ export default [typeDefinitions];
