@@ -52,3 +52,5 @@ mkdir src/server/services/graphql
 ```
 
 ## Writing your first GraphQL schemas
+## Implementing GraphQL resolvers
+
