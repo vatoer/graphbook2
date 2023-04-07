@@ -39,3 +39,15 @@ mkdir -p src/client
 cd src/client
 touch index.js
 ```
+
+## Rendering your first React component
+
+- load Babel for our JavaScript file and tell Babel to transpile and what not to transpile, create a .babelrc file
+- You may have to restart the server
+  
+  ```sh
+  npm run client
+  ```
+
+
+
