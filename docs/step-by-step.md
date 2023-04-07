@@ -45,9 +45,9 @@ touch index.js
 - load Babel for our JavaScript file and tell Babel to transpile and what not to transpile, create a .babelrc file
 - You may have to restart the server
   
-  ```sh
-  npm run client
-  ```
+```sh
+npm run client
+```
 
 ## Rendering arrays from React state
 - Define a new variable ```initialPosts``` above the default exported App function
@@ -60,5 +60,17 @@ touch index.js
 - create variable posts with initial data from initialPosts
 - create variable post to save textarea value
 - create handleSubmit
+
+## Controlling document heads with React Helmet
+
+- Install React Helmet
+  
+```sh
+npm install --save react-helmet
+```
+
+- Import react-helmet at the top of the file
+
+
   
 
