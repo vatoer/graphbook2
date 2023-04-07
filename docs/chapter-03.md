@@ -129,3 +129,5 @@ rerun seed
 ```sh
 sequelize db:seed:all --seeders-path src/server/seeders --config src/server/config/index.js
 ```
+
+## Mutating data with Sequelize
