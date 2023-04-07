@@ -131,3 +131,20 @@ sequelize db:seed:all --seeders-path src/server/seeders --config src/server/conf
 ```
 
 ## Mutating data with Sequelize
+## Many-to-many relationships
+### Model and migrations
+
+#### Chat model
+```sh
+sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name Chat --attributes firstName:string,lastName:string,email:string
+
+sequelize migration:create --migrations-path src/server/migrations --name create-user-chats
+```
+
+```sh
+sequelize db:migrate --migrations-path src/server/migrations --config src/server/config/index.js
+```
+
+
+
+
