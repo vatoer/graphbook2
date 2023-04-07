@@ -2,9 +2,16 @@
 import { ApolloServer } from '@apollo/server';
 
 const typeDefinitions = `#graphql
+
+    type User {
+        avatar: String
+        username: String
+    }
+    
     type Post {
         id: Int
         text: String
+        user: User
     }
 
     type RootQuery {
@@ -16,4 +23,4 @@ const typeDefinitions = `#graphql
     }
  `;
 
- export default [typeDefinitions];
+export default [typeDefinitions];

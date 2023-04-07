@@ -57,4 +57,4 @@ mkdir src/server/services/graphql
 ## Sending GraphQL queries
 - send POST request to ```http://127.0.0.1:8000/graphql```:
 
-
+## Using multiple types in GraphQL schemas
