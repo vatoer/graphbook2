@@ -93,3 +93,23 @@ generate User model
 ```sh
 sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name User --attributes avatar:string,username:string
 ```
+
+## Updating the table structure with migrations
+```sh
+sequelize migration:create --migrations-path src/server/migrations --name add-userId-to-post
+```
+
+rerun migration
+```sh
+sequelize db:migrate --migrations-path src/server/migrations --config src/server/config/index.js
+```
+
+to undo recent migration 
+```sh
+sequelize db:migrate:undo --migrations-path src/server/migrations --config src/server/config/index.js
+```
+
+to undo all 
+```sh
+sequelize db:migrate:undo:all --to XXXXXXXXXXXXXX-create-posts.js --migrations-path src/server/migrations --config src/server/config/index.js
+```
