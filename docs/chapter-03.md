@@ -46,3 +46,16 @@ execute migration
 ```sh
 sequelize db:migrate --migrations-path src/server/migrations --config src/server/config/index.js
 ```
+
+## Importing models with Sequelize
+Create an index.js file in the models folder
+```sh
+touch src/server/models/index.js
+```
+
+```sh
+npm install --save-dev babel-plugin-require-context-hook
+```
+
+We need to load the Babel plugin at the start of our development server, so, open the
+package.json file and edit the server script

@@ -6,6 +6,7 @@ import compress from 'compression';
 import services from './services';
 import { expressMiddleware } from '@apollo/server/express4';
 import { json } from 'body-parser';
+import db from './database';
 
 
 const root = path.join(__dirname, '../../');
