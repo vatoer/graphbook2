@@ -27,3 +27,16 @@ touch src/server/database/index.js
 mkdir src/server/config
 touch src/server/config/index.js
 ```
+
+## Writing database models
+```sh
+mkdir src/server/models
+mkdir src/server/migrations
+```
+
+### Your first database model
+```sh 
+npm install -g sequelize-cli
+
+sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name Post --attributes text:text
+```
