@@ -3,6 +3,7 @@ import path from 'path';
 import helmet from 'helmet';
 import cors from 'cors';
 import compress from 'compression';
+import services from './services';
 
 const app = express();
 const root = path.join(__dirname, '../../')
@@ -27,4 +28,19 @@ app.use('/uploads', express.static(path.join(root, 'uploads')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(root, '/dist/client/index.html'))
 });
+
+const serviceNames = Object.keys(services);
+
+for (let i = 0; i < serviceNames.length; i++) {
+    const name = serviceNames[i];
+    if( name == 'graphql') {
+        (async () => {
+            await services[name].start();
+            services[name].applyMiddleware({app});
+        })();
+    } else {
+        app.use(`/{name}`, services[name]);
+    }
+}
+
 app.listen(8000, () => console.log('Listening on port 8000!'));

@@ -41,3 +41,12 @@ npm install --save compression cors helmet
 - Compression with Express.js
 - CORS in Express.js
 
+## Combining Express.js with Apollo
+```sh
+npm install --save @apollo/server graphql @graphql-tools/schema
+```
+
+```sh
+mkdir src/server/services/
+mkdir src/server/services/graphql
+```
