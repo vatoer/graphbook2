@@ -87,3 +87,9 @@ sequelize db:seed:all --seeders-path src/server/seeders --config src/server/conf
 ```#graphql
 { posts { id text user { avatar username } } }
 ```
+
+## One-to-one relationships in Sequelize
+generate User model
+```sh
+sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name User --attributes avatar:string,username:string
+```
