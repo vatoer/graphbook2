@@ -145,6 +145,11 @@ sequelize migration:create --migrations-path src/server/migrations --name create
 sequelize db:migrate --migrations-path src/server/migrations --config src/server/config/index.js
 ```
 
+#### Message model
+```sh
+sequelize model:generate --models-path src/server/models --migrations-path src/server/migrations --name Message --attributes text:string,userId:integer,chatId:integer
+```
+
 
 
 
