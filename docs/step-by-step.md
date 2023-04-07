@@ -71,6 +71,15 @@ npm install --save react-helmet
 
 - Import react-helmet at the top of the file
 
+## Production build with webpack
 
-  
+To bundle CSS files, we will rely on another webpack plugin, called MiniCss:
+```sh
+npm install --save-dev mini-css-extract-plugin
+```
 
+create and configure webpack.client.build.config.js
+
+```sh
+run client:build
+```
