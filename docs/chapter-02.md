@@ -111,3 +111,11 @@ mutation addPost($post: PostInput!, $user: UserInput!) {
   }
 }
 ```
+ 
+## Backend debugging and logging
+### Logging in Node.js
+```sh
+npm install --save winston
+mkdir src/server/helpers
+
+
