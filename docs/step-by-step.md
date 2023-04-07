@@ -53,3 +53,6 @@ touch index.js
 - Define a new variable ```initialPosts``` above the default exported App function
 - import ```useState```
 
+## CSS with webpack
+- Create a style.css file in /assets/css
+
