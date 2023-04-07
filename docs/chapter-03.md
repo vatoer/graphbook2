@@ -73,3 +73,17 @@ sequelize db:seed:all --seeders-path src/server/seeders --config src/server/conf
 ## Using Sequelize with GraphQL
 ### Global database instance
 
+## Running the first database query
+
+### JSON
+```json
+{
+ "operationName": null,
+ "query": "{ posts { id text user { avatar username } } }",
+ "variables": {}
+}
+```
+### graphql
+```#graphql
+{ posts { id text user { avatar username } } }
+```
