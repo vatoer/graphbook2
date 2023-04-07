@@ -58,3 +58,4 @@ mkdir src/server/services/graphql
 - send POST request to ```http://127.0.0.1:8000/graphql```:
 
 ## Using multiple types in GraphQL schemas
+## test with fake data
