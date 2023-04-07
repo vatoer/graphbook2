@@ -115,3 +115,17 @@ sequelize db:migrate:undo:all --to XXXXXXXXXXXXXX-create-posts.js --migrations-p
 ```
 
 ## Model associations in Sequelize
+## Seeding foreign key data
+```sh
+sequelize seed:generate --name fake-users --seeders-path src/server/seeders
+```
+
+undo all seed before
+```sh
+sequelize db:seed:undo:all --seeders-path src/server/seeders --config src/server/config/index.js
+```
+
+rerun seed
+```sh
+sequelize db:seed:all --seeders-path src/server/seeders --config src/server/config/index.js
+```
