@@ -57,7 +57,7 @@ export default function resolver() {
                     })
                 })
             },
-            chat(root, { chatId }, context){
+            chat(root, { chatId }, context) {
                 return Chat.findByPk(chatId, {
                     include: [{
                         model: User,
@@ -86,6 +86,19 @@ export default function resolver() {
                             });
                             return newPost;
                         })
+                    })
+                })
+            },
+            addChat(root, { chat }, context) {
+                return Chat.create().then((newChat) => {
+                    return Promise.all([
+                        newChat.setUsers(chat.users),
+                    ]).then(() => {
+                        logger.log({
+                            level: 'info',
+                            message: 'Message was created',
+                        });
+                        return newChat;
                     })
                 })
             }
