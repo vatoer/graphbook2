@@ -47,6 +47,11 @@ const typeDefinitions = `#graphql
         users: [Int]
     }
 
+    input MessageInput {
+        text: String!
+        chatId: Int!
+    }
+
     type RootMutation {
         addPost (
             post: PostInput!
@@ -54,6 +59,9 @@ const typeDefinitions = `#graphql
         addChat (
             chat: ChatInput !
         ): Chat
+        addMessage (
+            message: MessageInput
+        ): Message
     }
 
     schema {

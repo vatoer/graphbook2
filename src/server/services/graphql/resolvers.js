@@ -101,6 +101,25 @@ export default function resolver() {
                         return newChat;
                     })
                 })
+            },
+            addMessage(root, { message }, context) {
+                return User.findAll().then((users) => {
+                    const usersRow = users[0];
+                    return Message.create({
+                        ...message,
+                    }).then((newMessage) => {
+                        return Promise.all([
+                            newMessage.setUser(usersRow.id),
+                            newMessage.setChat(message.chatId)
+                        ]).then(() => {
+                            logger.log({
+                                level: 'info',
+                                message: 'Message was created',
+                            });
+                            return newMessage;
+                        });
+                    });
+                })
             }
         }
     };

@@ -164,3 +164,5 @@ sequelize seed:generate --name fake-messages --seeders-path src/server/seeders
 ```
 
 ## Creating a new chat
+## Creating a new message
+
