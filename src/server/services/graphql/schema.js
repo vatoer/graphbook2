@@ -31,6 +31,7 @@ const typeDefinitions = `#graphql
     type RootQuery {
         posts: [Post]
         chats: [Chat]
+        chat(chatId: Int): Chat
     }
 
     input PostInput {
