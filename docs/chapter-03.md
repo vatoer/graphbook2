@@ -151,3 +151,15 @@ sequelize model:generate --models-path src/server/models --migrations-path src/s
 ```
 
 ## Chats and messages in GraphQL
+
+## Seeding many-to-many data
+```sh
+sequelize seed:generate --name fake-chats --seeders-path src/server/seeders
+```
+
+```sh
+sequelize seed:generate --name fake-chats-users-relations --seeders-path src/server/seeders
+
+sequelize seed:generate --name fake-messages --seeders-path src/server/seeders
+```
+

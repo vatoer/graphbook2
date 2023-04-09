@@ -4,6 +4,7 @@ import { ApolloServer } from '@apollo/server';
 const typeDefinitions = `#graphql
 
     type User {
+        id: Int
         avatar: String
         username: String
     }
