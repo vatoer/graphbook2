@@ -19,6 +19,10 @@ export default function resolver() {
             },
         },
         Chat: {
+            lastMessage(chat, args, context) {
+                return chat.getMessages({ limit: 1, order: [['id', 'DESC']] })
+                    .then((message) => { return message[0] });
+            },
             messages(chat, args, context) {
                 return chat.getMessages({ order: [['id', 'ASC']] });
             },

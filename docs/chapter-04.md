@@ -49,3 +49,4 @@ property in our map loop.
 ## Polling with Apollo Client
 
 ## Implementing chats and messages
+### get last message

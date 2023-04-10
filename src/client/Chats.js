@@ -3,6 +3,9 @@ import React, { useState } from "react";
 const chats = [
     {
         "id": 2,
+        "lastMessage": {
+            "text": "This is a last test message."
+        },
         "users": [
             {
                 "avatar": "/uploads/avatar1.png",
@@ -16,6 +19,9 @@ const chats = [
     },
     {
         "id": 4,
+        "lastMessage": {
+            "text": "This is a last test message."
+        },
         "users": [
             {
                 "avatar": "/uploads/avatar1.png",
@@ -85,8 +91,8 @@ const Chats = () => {
                             '/public/group.png' :
                             chat.users[1].avatar)} />
                         <div>
-                            <h2>{shorten(usernamesToString
-                                (chat.users))}</h2>
+                            <h2>{shorten(usernamesToString(chat.users))}</h2>
+                            <span>{chat?.lastMessage?.text}</span>
                         </div>
                     </div>
                 </div>
