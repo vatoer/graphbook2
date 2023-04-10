@@ -1,65 +1,19 @@
 import React, { useState } from "react";
+import { gql, useQuery } from "@apollo/client";
 
-const chats = [
-    {
-        "id": 2,
-        "lastMessage": {
-            "text": "This is a last test message."
-        },
-        "users": [
-            {
-                "avatar": "/uploads/avatar1.png",
-                "username": "fulan"
-            },
-            {
-                "avatar": "/uploads/avatar2.png",
-                "username": "adam"
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "lastMessage": {
-            "text": "This is a last test message."
-        },
-        "users": [
-            {
-                "avatar": "/uploads/avatar1.png",
-                "username": "fulan"
-            },
-            {
-                "avatar": "/uploads/avatar2.png",
-                "username": "adam"
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "users": [
-            {
-                "avatar": "/uploads/avatar1.png",
-                "username": "fulan"
-            },
-            {
-                "avatar": "/uploads/avatar2.png",
-                "username": "adam"
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "users": [
-            {
-                "avatar": "/uploads/avatar1.png",
-                "username": "fulan"
-            },
-            {
-                "avatar": "/uploads/avatar2.png",
-                "username": "adam"
-            }
-        ]
+const GET_CHATS = gql`{
+    chats {
+        id
+        users {
+            id
+            avatar
+            username
+        }
+        lastMessage {
+            text
+        }
     }
-]
+}`;
 
 const usernamesToString = (users) => {
     const userLists = users.slice(1);
@@ -82,6 +36,12 @@ const shorten = (text) => {
 }
 
 const Chats = () => {
+    const { loading, error, data } = useQuery(GET_CHATS);
+
+    if (loading) return <div className="chats"><p>Loading...</p></div>;
+    if (error) return <div className="chats"><p>{error.message}</p></div>;
+    const { chats } = data;
+    
     return (
         <div className="chats">
             {chats.map((chat, i) =>
