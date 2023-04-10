@@ -32,6 +32,19 @@ const Feed = () => {
     const [postContent, setPostContent] = useState('');
     const { loading, error, data } = useQuery(GET_POSTS);
     const [ addPost ] = useMutation(ADD_POSTS, {
+        optimisticResponse: {
+            __typename: "mutation",
+            addPost: {
+                __typename: "Post",
+                text: postContent,
+                id: -1,
+                user: {
+                    __typename: "User",
+                    username: "loading...",
+                    avatar: "/public/loading.gif"
+                }
+            }
+        },
         update(cache, { data: {addPost} }) {
             cache.modify({
                 fields: {
