@@ -24,3 +24,5 @@ touch src/client/apollo/index.js
 ```
 
 ## Testing Apollo Client
+## Binding Apollo Client to React
+
