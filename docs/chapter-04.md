@@ -43,4 +43,5 @@ refetching is needed.
 - Refetching the dataset-Updating the Apollo Client cache #2
 
 ### Optimistic UI
-
+To set a particular class on the list item, we conditionally set the correct className
+property in our map loop.
