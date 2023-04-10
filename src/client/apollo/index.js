@@ -1,10 +1,11 @@
 import { ApolloClient, InMemoryCache, from, HttpLink, ApolloLink } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
+import { gql } from '@apollo/client';
 
 const client = new ApolloClient({
     link: from([
         onError(({ graphQLErrors, networkError }) => {
-            if(graphQLErrors) {
+            if (graphQLErrors) {
                 graphQLErrors.map(({ message, locations, path }) => {
                     console.log(`[GraphQL Error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
                 });
@@ -19,5 +20,19 @@ const client = new ApolloClient({
     ]),
     cache: new InMemoryCache(),
 });
+
+client.query({
+    query: gql`
+    {
+        posts {
+        id
+        text
+        user {
+            avatar
+            username
+            }
+        }
+    }`
+}).then(result => console.log(result));
 
 export default client;
