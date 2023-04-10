@@ -30,9 +30,12 @@ touch src/client/apollo/index.js
 
 ## Mutating data with Apollo Client
 ## Apollo useMutation Hook
+## Updating the UI with Apollo Client
+There are two different ways to update the UI after a mutation, as follows:
+- Refetching the dataset: This is easy to implement but it refetches all of the data,
+which is inefficient.
+- Updating the cache according to the inserted data: This is harder to understand
+and implement, but it attaches the new data to the cache of Apollo Client, so no
+refetching is needed.
 
-
-
-
-
-
+### Refetching the dataset
