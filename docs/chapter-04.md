@@ -45,3 +45,5 @@ refetching is needed.
 ### Optimistic UI
 To set a particular class on the list item, we conditionally set the correct className
 property in our map loop.
+
+## Polling with Apollo Client

@@ -30,7 +30,9 @@ const ADD_POSTS = gql`
 
 const Feed = () => {
     const [postContent, setPostContent] = useState('');
-    const { loading, error, data } = useQuery(GET_POSTS);
+    const { loading, error, data } = useQuery(GET_POSTS, {
+        pollInterval: 50000
+    });
     const [ addPost ] = useMutation(ADD_POSTS, {
         optimisticResponse: {
             __typename: "mutation",
