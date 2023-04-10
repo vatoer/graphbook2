@@ -25,4 +25,8 @@ touch src/client/apollo/index.js
 
 ## Testing Apollo Client
 ## Binding Apollo Client to React
+## Using Apollo Client in React
+## Querying in React with Apollo Client
+
+
 
