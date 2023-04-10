@@ -39,3 +39,5 @@ and implement, but it attaches the new data to the cache of Apollo Client, so no
 refetching is needed.
 
 ### Refetching the dataset
+### Updating the Apollo Client cache
+
