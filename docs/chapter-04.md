@@ -59,3 +59,5 @@ property in our map loop.
 ```sh
 npm install react-infinite-scroll-component --save
 ```
+
+## Debugging with the Apollo Client Devtools
