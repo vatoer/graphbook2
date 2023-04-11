@@ -53,3 +53,5 @@ property in our map loop.
 ###  useQuery Hook in order to fetch all of the data from our GraphQL API
 
 ## Fetching and displaying messages
+## Sending messages through mutations
+
