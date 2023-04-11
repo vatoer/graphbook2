@@ -55,3 +55,7 @@ property in our map loop.
 ## Fetching and displaying messages
 ## Sending messages through mutations
 
+## Pagination in React and GraphQL
+```sh
+npm install react-infinite-scroll-component --save
+```
