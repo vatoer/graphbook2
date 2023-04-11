@@ -51,3 +51,5 @@ property in our map loop.
 ## Implementing chats and messages
 ### get last message
 ###  useQuery Hook in order to fetch all of the data from our GraphQL API
+
+## Fetching and displaying messages
