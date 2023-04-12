@@ -47,3 +47,6 @@ have it in separate files
 
 ### Font Awesome in React
 npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
+
+### React helper components
+
