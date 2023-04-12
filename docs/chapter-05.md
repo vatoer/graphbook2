@@ -19,3 +19,7 @@ touch src/client/components/loading.js
 ### Conditional rendering
 ### Rendering child components
 
+## Structuring our React application
+### The React file structure
+
+
