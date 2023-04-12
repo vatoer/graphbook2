@@ -58,7 +58,17 @@ npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 ```sh
 npm install --save-dev react-styleguidist
 ```
+### React PropTypes
+```sh
+mkdir src/client/styleguide/
+npm install --save prop-types
+```
+test documentation
 
+```sh
+npx styleguidist build
+npx styleguidist server
+```
 
 
 
