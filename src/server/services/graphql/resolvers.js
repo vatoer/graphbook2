@@ -99,6 +99,31 @@ export default function resolver() {
             },
         },
         RootMutation: {
+            deletePost(root, { postId }, context) {
+                return Post.destroy({
+                    where: {
+                        id: postId
+                    }
+                }).then(function (rows) {
+                    if (rows === 1) {
+                        logger.log({
+                            level: 'info',
+                            message: 'Post ' + postId + 'was deleted',
+                        });
+                        return {
+                            success: true
+                        };
+                    }
+                    return {
+                        success: false
+                    };
+                }, function (err) {
+                    logger.log({
+                        level: 'error',
+                        message: err.message,
+                    });
+                });
+            },
             addPost(root, { post, user }, context) {
                 return User.findAll().then((users) => {
                     const usersRow = users[0];

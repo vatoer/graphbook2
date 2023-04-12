@@ -40,6 +40,10 @@ const typeDefinitions = `#graphql
         postsFeed(page: Int, limit: Int): PostFeed
     }
 
+    type Response {
+        success: Boolean
+    }
+
     input PostInput {
         text: String!
     }
@@ -59,6 +63,9 @@ const typeDefinitions = `#graphql
     }
 
     type RootMutation {
+        deletePost (
+            postId: Int!
+        ): Response
         addPost (
             post: PostInput!
         ): Post
