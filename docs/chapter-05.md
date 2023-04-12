@@ -50,4 +50,6 @@ npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 
 ### React helper components
 ## The Apollo deletePost mutation
+## The React application bar
+
 

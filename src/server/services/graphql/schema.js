@@ -33,15 +33,12 @@ const typeDefinitions = `#graphql
         posts: [Post]
     }
 
-    type RootQuery {
-        posts: [Post]
-        chats: [Chat]
-        chat(chatId: Int): Chat
-        postsFeed(page: Int, limit: Int): PostFeed
-    }
-
     type Response {
         success: Boolean
+    }
+
+    type UsersSearch {
+        users: [User]
     }
 
     input PostInput {
@@ -60,6 +57,14 @@ const typeDefinitions = `#graphql
     input MessageInput {
         text: String!
         chatId: Int!
+    }
+
+    type RootQuery {
+        posts: [Post]
+        chats: [Chat]
+        chat(chatId: Int): Chat
+        postsFeed(page: Int, limit: Int): PostFeed
+        usersSearch(page: Int, limit: Int, text: String!): UsersSearch
     }
 
     type RootMutation {
