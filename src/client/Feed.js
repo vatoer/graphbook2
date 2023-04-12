@@ -3,21 +3,7 @@ import { gql, useQuery, useMutation } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './components/loading';
 import Post from './components/posts';
-
-const GET_POSTS = gql`
-    query postsFeed($page: Int, $limit: Int) {
-        postsFeed(page: $page, limit: $limit) {
-            posts {
-                id
-                text
-                user {
-                    avatar
-                    username
-                }
-            }
-        }
-    }
-`;
+import { GET_POSTS } from './apollo/queries/getPosts';
 
 const ADD_POSTS = gql`
     mutation addPost($post: PostInput!) {

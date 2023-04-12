@@ -22,4 +22,12 @@ touch src/client/components/loading.js
 ## Structuring our React application
 ### The React file structure
 
+## Efficient Apollo React components
+### Using fragments with Apollo
+```sh
+mkdir src/client/apollo/queries
+mkdir src/client/apollo/fragments
+```
+
+
 
