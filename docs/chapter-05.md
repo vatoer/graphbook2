@@ -54,6 +54,11 @@ npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 ## The React Context API versus Apollo Consumer
 ### The React Context API
 ### Apollo Consumer
+## Documenting React applications
+```sh
+npm install --save-dev react-styleguidist
+```
+
 
 
 
