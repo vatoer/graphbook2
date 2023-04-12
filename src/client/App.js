@@ -5,6 +5,7 @@ import Feed from './Feed';
 import Chats from './Chats';
 import './components/fontawesome';
 import Bar from './components/bar';
+import { UserProvider } from './components/context/user';
 
 
 const App = () => {
@@ -14,9 +15,11 @@ const App = () => {
                 <title>Graphbook - Feed</title>
                 <meta name="description" content="Newsfeed of all your friends on Graphbook" />
             </Helmet>
-            <Bar />
-            <Feed />
-            <Chats />
+            <UserProvider>
+                <Bar />
+                <Feed />
+                <Chats />
+            </UserProvider>
         </div>
     )
 }
