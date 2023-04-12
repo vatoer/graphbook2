@@ -53,6 +53,7 @@ npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
 ## The React application bar
 ## The React Context API versus Apollo Consumer
 ### The React Context API
+### Apollo Consumer
 
 
 

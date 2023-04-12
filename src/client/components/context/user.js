@@ -1,25 +1,21 @@
 import React, { createContext } from "react";
 
-const { Provider, Consumer } = createContext();
+import { ApolloConsumer } from "@apollo/client";
 
-export const UserProvider = ({ children }) => {
-    const user = {
-        username: "Test User",
-        avatar: "/uploads/avatar1.png"
-    }
+export const UserConsumer = ({children}) => {
     return (
-        <Provider value={user}>
-            {children}
-        </Provider>
-    )
-}
-
-export const UserConsumer = ({ children }) => {
-    return (
-        <Consumer>
-            {user => React.Children.map(children, function(child) {
-                return React.cloneElement(child, {user});
-            })}
-        </Consumer>
+        <ApolloConsumer>
+            {client => {
+                // Use client.readQuery to get the current logged
+                // in user.
+                const user = {
+                    username: "Test User",
+                    avatar: "/uploads/avatar1.png"
+                };
+                return React.Children.map(children, function(child){
+                    return React.cloneElement(child, { user });
+                });
+            }}
+        </ApolloConsumer>
     )
 }
