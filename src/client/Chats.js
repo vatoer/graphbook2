@@ -63,7 +63,7 @@ const Chats = () => {
     }
 
     if (loading) return <Loading />
-    if (error) return <div className="chats"><p>{error.message}</p></div>;
+    if (error) return <Error><p>{error.message}</p></Error>;
     const { chats } = data;
 
     return (

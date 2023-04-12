@@ -114,7 +114,7 @@ const Feed = () => {
     };
 
     if (loading) return <Loading />
-    if (error) return `Error! ${error.message}`;
+    if (error) return <Error><p>{error.message}</p></Error>;
 
     const { postsFeed } = data;
     const { posts } = postsFeed;

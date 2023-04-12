@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { gql, useQuery, useMutation } from "@apollo/client";
 import Loading from "./components/loading";
+import Error from "./components/error";
 
 const ADD_MESSAGE = gql`
     mutation addMessage($message: MessageInput!) {
@@ -75,7 +76,7 @@ const Chat = (props) => {
     }
 
     if (loading) return <Loading />
-    if (error) return <div className="chatWindow"><p>{error.message}</p></div>;
+    if (error) return <Error><p>{error.message}</p></Error>;
 
     const { chat } = data
 

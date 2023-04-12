@@ -15,3 +15,7 @@
 mkdir src/client/components
 touch src/client/components/loading.js
 ```
+
+### Conditional rendering
+### Rendering child components
+
