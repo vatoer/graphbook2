@@ -29,5 +29,8 @@ mkdir src/client/apollo/queries
 mkdir src/client/apollo/fragments
 ```
 
-
+### Reusing Apollo Hooks
+```sh
+mkdir src/client/apollo/mutations
+```
 

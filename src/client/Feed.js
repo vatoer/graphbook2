@@ -4,20 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './components/loading';
 import Post from './components/posts';
 import { GET_POSTS } from './apollo/queries/getPosts';
-
-const ADD_POSTS = gql`
-    mutation addPost($post: PostInput!) {
-        addPost (post: $post) {
-            id
-            text
-            user {
-                username
-                avatar
-            }
-        }
-    }
-`;
-
+import { ADD_POST, getAddPostConfig } from './apollo/mutations/addPost';
 
 
 const Feed = () => {
@@ -27,43 +14,8 @@ const Feed = () => {
     const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
         pollInterval: 50000, variables: { page: 0, limit: 10 }
     });
-    const [addPost] = useMutation(ADD_POSTS, {
-        optimisticResponse: {
-            __typename: "mutation",
-            addPost: {
-                __typename: "Post",
-                text: postContent,
-                id: -1,
-                user: {
-                    __typename: "User",
-                    username: "loading...",
-                    avatar: "/public/loading.gif"
-                }
-            }
-        },
-        update(cache, { data: { addPost } }) {
-            cache.modify({
-                fields: {
-                    postsFeed(existingPostsFeed) {
-                        const { posts: existingPosts } = existingPostsFeed;
-                        const newPostRef = cache.writeFragment({
-                            data: addPost,
-                            fragment: gql`
-                                fragment NewPost on Post {
-                                    id
-                                    type
-                                }
-                            `
-                        });
-                        return {
-                            ...existingPostsFeed,
-                            posts: [newPostRef, ...existingPosts]
-                        };
-                    }
-                }
-            })
-        }
-    });
+    
+    const [addPost] = useMutation(ADD_POST, getAddPostConfig(postContent));
 
     const loadMore = (fetchMore) => {
         const self = this;
