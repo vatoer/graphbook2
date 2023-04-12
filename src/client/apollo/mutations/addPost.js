@@ -54,3 +54,4 @@ export const getAddPostConfig = (postContent) => ({
     }
 });
 
+export const useAddPostMutation = (postContent) => useMutation(ADD_POST, getAddPostConfig(postContent));

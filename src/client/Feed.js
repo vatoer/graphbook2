@@ -4,7 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './components/loading';
 import Post from './components/posts';
 import { GET_POSTS } from './apollo/queries/getPosts';
-import { ADD_POST, getAddPostConfig } from './apollo/mutations/addPost';
+import { useAddPostMutation } from './apollo/mutations/addPost';
 
 
 const Feed = () => {
@@ -15,7 +15,7 @@ const Feed = () => {
         pollInterval: 50000, variables: { page: 0, limit: 10 }
     });
     
-    const [addPost] = useMutation(ADD_POST, getAddPostConfig(postContent));
+    const [addPost] = useAddPostMutation(postContent);
 
     const loadMore = (fetchMore) => {
         const self = this;

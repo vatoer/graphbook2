@@ -34,3 +34,5 @@ mkdir src/client/apollo/fragments
 mkdir src/client/apollo/mutations
 ```
 
+cleaned up the functional component from most of the GraphQL request logic and
+have it in separate files
