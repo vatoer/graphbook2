@@ -41,6 +41,10 @@ const typeDefinitions = `#graphql
         users: [User]
     }
 
+    type Auth {
+        token: String
+    }
+
     input PostInput {
         text: String!
     }
@@ -68,6 +72,10 @@ const typeDefinitions = `#graphql
     }
 
     type RootMutation {
+        login (
+            email: String!
+            password: String!
+        ): Auth
         deletePost (
             postId: Int!
         ): Response

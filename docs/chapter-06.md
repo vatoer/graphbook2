@@ -29,3 +29,11 @@ npm install --save jsonwebtoken bcrypt
 ```sh
 export JWT_SECRET=awv4BcIzsRysXkhoSAb8t8lNENgXSqBruVlLwd45kGdYjeJHLap9LUJ1t9DTdw36DvLcWs3qEkPyCY6vOyNljlh2Er952h2gDzYwG82rs1qfTzdVIg89KTaQ4SWI1YGY
 ```
+
+run in powershel 
+```sh
+node --print 'process.env'
+$env:NODE_ENV="development"
+$env:JWT_SECRET="awv4BcIzsRysXkhoSAb8t8lNENgXSqBruVlLwd45kGdYjeJHLap9LUJ1t9DTdw36DvLcWs3qEkPyCY6vOyNljlh2Er952h2gDzYwG82rs1qfTzdVIg89KTaQ4SWI1YGY"
+node --print 'process.env'
+```
