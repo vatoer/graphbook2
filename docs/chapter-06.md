@@ -39,3 +39,5 @@ node --print 'process.env'
 ```
 
 ## The React login form
+## Apollo signup mutation
+

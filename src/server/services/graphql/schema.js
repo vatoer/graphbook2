@@ -72,6 +72,11 @@ const typeDefinitions = `#graphql
     }
 
     type RootMutation {
+        signup (
+            username: String!
+            email: String!
+            password: String!
+        ): Auth
         login (
             email: String!
             password: String!
