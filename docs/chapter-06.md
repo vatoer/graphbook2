@@ -20,3 +20,12 @@ execute seeders
 ```sh
 sequelize db:seed:all --seeders-path src/server/seeders --config src/server/config/index.js
 ```
+
+### Apollo login mutation
+```sh
+npm install --save jsonwebtoken bcrypt
+```
+
+```sh
+export JWT_SECRET=awv4BcIzsRysXkhoSAb8t8lNENgXSqBruVlLwd45kGdYjeJHLap9LUJ1t9DTdw36DvLcWs3qEkPyCY6vOyNljlh2Er952h2gDzYwG82rs1qfTzdVIg89KTaQ4SWI1YGY
+```
