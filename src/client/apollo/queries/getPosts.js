@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 import { USER_ATTRIBUTES } from '../fragments/userAttributes';
 
 export const GET_POSTS = gql`
@@ -15,3 +15,5 @@ export const GET_POSTS = gql`
     }
     ${USER_ATTRIBUTES}
 `;
+
+export const useGetPostsQuery = () => useQuery(GET_POSTS, { pollInterval: 5000, variables: { page: 0, limit: 10 } });

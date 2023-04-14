@@ -1,6 +1,20 @@
 import { ApolloClient, InMemoryCache, from, HttpLink, ApolloLink } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 
+const AuthLink = (operation, next) => {
+    const token = localStorage.getItem('jwt');
+    if(token) {
+        operation.setContext(context=> ({
+            ...context,
+            headers: {
+                ...context.headers,
+                Authorization: `Bearer ${token}`,
+            },
+        }));
+    }
+    return next(operation)
+}
+
 const client = new ApolloClient({
     link: from([
         onError(({ graphQLErrors, networkError }) => {
@@ -13,8 +27,10 @@ const client = new ApolloClient({
                 }
             }
         }),
+        AuthLink,
         new HttpLink({
-            uri: 'http://127.0.0.1:8000/graphql'
+            uri: 'http://127.0.0.1:8000/graphql',
+            credentials: 'same-origin'
         }),
     ]),
     cache: new InMemoryCache(),

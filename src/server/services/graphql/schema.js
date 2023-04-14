@@ -2,7 +2,7 @@
 import { ApolloServer } from '@apollo/server';
 
 const typeDefinitions = `#graphql
-
+    directive @auth on QUERY | FIELD_DEFINITION | FIELD
     type User {
         id: Int
         avatar: String
@@ -67,7 +67,7 @@ const typeDefinitions = `#graphql
         posts: [Post]
         chats: [Chat]
         chat(chatId: Int): Chat
-        postsFeed(page: Int, limit: Int): PostFeed
+        postsFeed(page: Int, limit: Int): PostFeed @auth
         usersSearch(page: Int, limit: Int, text: String!): UsersSearch
     }
 

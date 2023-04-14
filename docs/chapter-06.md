@@ -40,4 +40,7 @@ node --print 'process.env'
 
 ## The React login form
 ## Apollo signup mutation
-
+## Authenticating GraphQL requests
+```sh
+npm install --save @graphql-tools/utils
+```

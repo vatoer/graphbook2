@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { gql, useQuery, useMutation } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Loading from './components/loading';
+import Error from './components/error';
 import Post from './components/posts';
-import { GET_POSTS } from './apollo/queries/getPosts';
+import { useGetPostsQuery } from './apollo/queries/getPosts';
 import { useAddPostMutation } from './apollo/mutations/addPost';
 
 
@@ -11,9 +12,7 @@ const Feed = () => {
     const [postContent, setPostContent] = useState('');
     const [hasMore, setHasMore] = useState(true);
     const [page, setPage] = useState(0);
-    const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
-        pollInterval: 50000, variables: { page: 0, limit: 10 }
-    });
+    const { loading, error, data, fetchMore } = useGetPostsQuery();
     
     const [addPost] = useAddPostMutation(postContent);
 
